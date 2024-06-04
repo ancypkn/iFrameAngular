@@ -15,6 +15,7 @@
 .search{
     background: blue;
     color: white;
+     cursor:pointer;
 }
 iframe{
     width:100%;
