@@ -1,0 +1,26 @@
+<!-- parent application starts -->
+<!-- child app will be loaded as iframe when a search result is recieved fro api -->
+
+<div class="container mt-4">
+
+  <!-- left sec which contains search box -->
+  <div class="left-sec col-sm-12">
+    <!-- section for searh area -->
+    <div class="input-group rounded">
+      <!-- search input box -->
+      <input  [(ngModel)]="searchTerm" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <!-- search button -->
+      <span class="input-group-text border-0 search" id="search-addon"(click)="getData()">
+        Search
+      </span>
+    </div>
+    <!-- section for searh area ends -->
+  </div>
+
+  <!-- right section to load iframe -->
+  <!-- child app is loaded inside iframe -->
+  <div class="right-sec col-md-8 mt-1 col-sm-12">
+    <iframe id="childIframe" src="http://localhost:4201"></iframe>
+  </div>
+</div>
+

@@ -1,0 +1,46 @@
+
+<!-- <child component starts -->
+<!-- This page displays the movie movieInfo -->
+
+<div *ngIf = movieInfo class="row mt-2 p-4">
+  <div *ngFor="let key of dataList" class="col-md-6">
+    <div *ngIf = "key !='Ratings'">
+      <!-- label of each info -->
+      <label class="col-md-6">
+        {{key}}:
+      </label>
+      <b class="col-md-6 content">{{movieInfo[key]}}</b>  
+    </div>
+  
+  </div>
+  <!-- container for showing the rating -->
+  <!-- showing it in seperate section since it has multiple data -->
+  <div *ngIf = "movieInfo['Ratings']" >
+    <h3>Ratings</h3>
+    <div *ngFor="let item of movieInfo['Ratings']" class="col-md-6 rating-container">
+          <!-- label of each info -->
+          <div class="row pb-2" >
+            <label class="col-md-6">
+              Source:
+            </label>
+            <!-- source data -->
+            <b class="col-md-6 content">{{item['Source']}}</b>  
+          </div>
+          <div  class="row pb-2">
+            <label class="col-md-6">
+              Value:
+            </label>
+            <b class="col-md-6 content">{{item['Value']}}</b>  
+          </div>
+          
+      </div>
+  </div>
+  <!-- container for showing the rating ends -->
+</div>
+<!-- Message to be displaye if no data from api on search -->
+<div *ngIf = "!movieInfo" class="mt-4 p-4">
+  <b>Search to begin!</b>
+</div>
+
+<!-- <child component ends -->
+
