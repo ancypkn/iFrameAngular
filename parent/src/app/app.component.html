@@ -8,7 +8,7 @@
     <!-- section for searh area -->
     <div class="input-group rounded">
       <!-- search input box -->
-      <input  [(ngModel)]="searchTerm" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <input (keyup)="getData()" [(ngModel)]="searchTerm" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
       <!-- search button -->
       <span class="input-group-text border-0 search" id="search-addon"(click)="getData()">
         Search
